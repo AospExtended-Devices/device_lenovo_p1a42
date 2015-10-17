@@ -83,6 +83,10 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     memtrack.msm8916
 
+# Doze
+PRODUCT_PACKAGES += \
+    DeviceSettings
+
 # Fingerprint sensor
 PRODUCT_PACKAGES += \
     fingerprintd
