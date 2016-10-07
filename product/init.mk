@@ -1,7 +1,6 @@
 # Init scripts
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/fstab.qcom:root/fstab.qcom \
     $(LOCAL_PATH)/rootdir/init.class_main.sh:root/init.class_main.sh \
     $(LOCAL_PATH)/rootdir/init.mdm.sh:root/init.mdm.sh \
     $(LOCAL_PATH)/rootdir/init.qcom.bms.sh:root/init.qcom.bms.sh \
