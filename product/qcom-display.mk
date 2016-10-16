@@ -7,25 +7,16 @@ PRODUCT_PACKAGES += \
     memtrack.msm8916
 
 # Permissions
-ifeq ($(TARGET_BOARD_PLATFORM_VARIANT),msm8939)
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.opengles.aep.xml:system/etc/permissions/android.hardware.opengles.aep.xml
-endif
 
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.composition.type=c2d \
+    debug.enable.sglscale=1 \
     debug.mdpcomp.idletime=600 \
     persist.hwc.mdpcomp.enable=true \
-    persist.hwc.ptor.enable=true \
-    debug.enable.sglscale=1
+    ro.qualcomm.cabl=0 \
+    debug.sf.gpu_comp_tiling=1 \
+    sys.hwc.gpu_perf_mode=1
 
-ifeq ($(TARGET_BOARD_PLATFORM_VARIANT),msm8916)
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=196608
-else
-ifeq ($(TARGET_BOARD_PLATFORM_VARIANT),msm8939)
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=196609
-endif
-endif
