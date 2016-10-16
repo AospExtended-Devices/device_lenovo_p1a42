@@ -1,0 +1,3 @@
+# Charger
+BOARD_CHARGER_DISABLE_INIT_BLANK := true
+BOARD_HEALTHD_CUSTOM_CHARGER_RES := $(COMMON_PATH)/ramdisk/res/images/charger
