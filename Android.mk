@@ -15,7 +15,12 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter msm8916 msm8939,$(TARGET_BOARD_PLATFORM_VARIANT)),)
+ifeq ($(TARGET_DEVICE),p1a42)
+LOCAL_SRC_FILES += libbt-vendor.so:system/lib/libbt-vendor.so
+LOCAL_SRC_FILES += libbt-vendor.so:obj/SHARED_LIBRARIES/libbt-vendor_intermediates/LINKED/libbt-vendor.so
+LOCAL_SRC_FILES += libbt-vendor.so:symbols/system/lib/libbt-vendor.so
+LOCAL_SRC_FILES += libbt-vendor.so:obj/lib/libbt-vendor.so
+LOCAL_SRC_FILES += export_includes:obj/SHARED_LIBRARIES/libbt-vendor_intermediates/export_includes
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
@@ -32,6 +37,19 @@ $(CMN_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) ln -sf /firmware/image/$(notdir $@) $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(CMN_SYMLINKS)
+
+
+DXHDCP2_IMAGES := \
+    dxhdcp2.b00 dxhdcp2.b01 dxhdcp2.b02 dxhdcp2.b03 dxhdcp2.mdt
+
+DXHDCP2_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(DXHDCP2_IMAGES)))
+$(DXHDCP2_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "DXHDCP2 firmware link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf /firmware/image/$(notdir $@) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(DXHDCP2_SYMLINKS)
 
 ISDB_IMAGES := \
     isdbtmm.b00 isdbtmm.b01 isdbtmm.b02 isdbtmm.b03 isdbtmm.mdt
@@ -59,9 +77,9 @@ ALL_DEFAULT_INSTALLED_MODULES += $(KM_SYMLINKS)
 
 MODEM_IMAGES := \
     modem.b00 modem.b01 modem.b02 modem.b03 modem.b04 modem.b05 \
-    modem.b06 modem.b08 modem.b09 modem.b12 modem.b13 modem.b14 \
-    modem.b15 modem.b16 modem.b17 modem.b18 modem.b21 modem.b22 \
-    modem.b23 modem.b25 modem.b26 modem.mdt
+    modem.b06 modem.b07 modem.b08 modem.b10 modem.b11 modem.b14 \
+    modem.b15 modem.b16 modem.b17 modem.b18 modem.b19 modem.b20 \
+    modem.b23 modem.b24 modem.b25 modem.b27 modem.b28 modem.mdt
 
 MODEM_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(MODEM_IMAGES)))
 $(MODEM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
@@ -83,6 +101,18 @@ $(PLAYREADY_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) ln -sf /firmware/image/$(notdir $@) $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(PLAYREADY_SYMLINKS)
+
+TOUCH_FIRMWARE := \
+    ft_fw.bin Synaptics_fw_update.img
+
+TOUCH_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(TOUCH_FIRMWARE)))
+$(TOUCH_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "Touch firmware firmware link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf /persist/$(notdir $@) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(TOUCH_SYMLINKS)
 
 WCNSS_IMAGES := \
     wcnss.b00 wcnss.b01 wcnss.b02 wcnss.b04 wcnss.b06 \
