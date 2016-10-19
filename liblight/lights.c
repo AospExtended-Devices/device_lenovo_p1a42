@@ -21,6 +21,7 @@
 #include <cutils/log.h>
 
 #include <stdint.h>
+#include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 #include <errno.h>
@@ -54,7 +55,7 @@ char const*const BLUE_LED_FILE
 char const*const LCD_FILE
         = "/sys/class/leds/lcd-backlight/brightness";
 
-char const*const BUTTON_FILE[] 
+char const*const BUTTON_FILE 
     	= "/sys/class/leds/button-backlight/brightness";
 
 char const*const RED_BLINK_FILE
