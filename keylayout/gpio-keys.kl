@@ -29,6 +29,6 @@ key 115 VOLUME_UP
 key 114 VOLUME_DOWN
 #add by lixh10 for new define gpio keys 2015-3-16 start 
 key 172 HOME
-key 252 ONEKEY_UP	
-key 253 ONEKEY_DOWN
+key 252 VOLUME_MUTE
+key 253 VOLUME_MUTE
 #add by lixh10 for new define gpio keys 2015-3-16 end
