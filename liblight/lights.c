@@ -51,10 +51,10 @@ char const*const RED_LED_FILE
         = "/sys/class/leds/red/brightness";
 
 char const*const GREEN_PWM_FILE
-        = "/sys/class/leds/green/pwm_us";
+        = "/sys/class/leds/green/brightness";
 
 char const*const RED_PWM_FILE
-        = "/sys/class/leds/red/pwm_us";
+        = "/sys/class/leds/red/blink";
 /**
  * device methods
  */
