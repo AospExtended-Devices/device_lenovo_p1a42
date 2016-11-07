@@ -14,6 +14,9 @@
  * limitations under the License.
  */
 
+#define LOG_TAG "MSM8916 lights Module"
+/* #define LOG_NDEBUG 0 */
+
 #include <cutils/log.h>
 #include <stdlib.h>
 #include <string.h>
