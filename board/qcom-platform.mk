@@ -32,6 +32,8 @@ TARGET_POWERHAL_VARIANT := qcom
 TARGET_RIL_VARIANT := caf
 #TARGET_TAP_TO_WAKE_NODE := "/sys/class/tp_gesture/tp_device/tp_gesture_id"
 
+# RELEASETOOLS
+TARGET_RELEASETOOLS_EXTENSIONS := $(LOCAL_PATH)
 
 ifneq ($(QCPATH),)
 BOARD_USES_QCNE := true
