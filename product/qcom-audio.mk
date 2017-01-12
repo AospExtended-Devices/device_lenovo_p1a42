@@ -17,22 +17,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/mixer_paths_mtp.xml:system/etc/mixer_paths_mtp.xml \
     $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf
 
-# Properties
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.qc.sdk.audio.fluencetype=fluence \
-	persist.audio.fluence.voicecall=true \
-	persist.audio.fluence.voicerec=false \
-	persist.audio.fluence.speaker=true
-
-# Properties
-PRODUCT_PROPERTY_OVERRIDES += \
-	audio.offload.buffer.size.kb=64 \
-	audio.offload.min.duration.secs=30 \
-	audio.offload.video=true \
-	use.voice.path.for.pcm.voip=true \
-	ro.fm.transmitter=false \
-	audio.offload.gapless.enabled=true
-
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml
