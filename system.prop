@@ -91,7 +91,7 @@ com.qc.hardware=true
 debug.qc.hardware=true
 
 # Radio
-rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so \
+rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
 rild.libargs=-d /dev/smd0
 persist.radio.multisim.config=dsds
 persist.data.qmi.adb_logmask=0
@@ -101,7 +101,7 @@ persist.radio.dfr_mode_set=1
 persist.radio.no_wait_for_card=1
 persist.radio.oem_ind_to_both=false
 persist.radio.relay_oprt_change=1
-ro.telephony.default_network=9,1
+ro.telephony.default_network=9,9
 
 ro.use_data_netmgrd=true
 persist.data.netmgrd.qos.enable=true
