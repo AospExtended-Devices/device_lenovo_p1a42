@@ -15,3 +15,6 @@
 
 # Include board config fragments
 include device/lenovo/msm8916-common/board/*.mk
+
+# Properties
+TARGET_SYSTEM_PROP += device/lenovo/msm8916-common/system.prop
