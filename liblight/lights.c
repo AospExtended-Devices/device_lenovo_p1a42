@@ -16,7 +16,7 @@
  */
 
 
-// #define LOG_NDEBUG 0
+#define LOG_NDEBUG 0
 
 #include <cutils/log.h>
 
@@ -58,6 +58,19 @@ char const*const RED_BLINK_FILE
 
 char const*const BLUE_BLINK_FILE
         = "/sys/class/leds/blue/blink";
+
+char const*const RED_DELAY_ON
+        = "/sys/class/leds/red/delay_on";
+
+char const*const BLUE_DELAY_ON
+        = "/sys/class/leds/blue/delay_on";
+
+char const*const RED_DELAY_OFF
+        = "/sys/class/leds/red/delay_off";
+
+char const*const BLUE_DELAY_OFF
+        = "/sys/class/leds/blue/delay_off";
+
 
 /**
  * device methods
@@ -122,7 +135,7 @@ set_light_backlight(struct light_device_t* dev,
 
 static int
 set_speaker_light_locked(struct light_device_t* dev,
-        struct light_state_t const* state)
+        struct light_state_t const* state, int batt_light)
 {
     int red, green, blue;
     int blink;
@@ -147,14 +160,33 @@ set_speaker_light_locked(struct light_device_t* dev,
 
     colorRGB = state->color;
 
-#if 0
-    ALOGD("set_speaker_light_locked mode %d, colorRGB=%08X, onMS=%d, offMS=%d\n",
-            state->flashMode, colorRGB, onMS, offMS);
+if 0
+    ALOGD("set_speaker_light_locked mode %d, batt:%d colorRGB=%08X, onMS=%d, offMS=%d\n",
+            state->flashMode, batt_light, colorRGB, onMS, offMS);
 #endif
 
-    red = (colorRGB >> 16) & 0xFF;
-    green = (colorRGB >> 8) & 0xFF;
-    blue = colorRGB & 0xFF;
+    const char *batt_file;
+    const char *batt_led;
+    const char *batt_delay_on;
+    const char *batt_delay_off;
+    //Reset both leds
+    write_int(BLUE_BLINK_FILE, 0);
+    write_int(BLUE_LED_FILE, 0);
+    write_int(RED_BLINK_FILE, 0);
+    write_int(RED_LED_FILE, 0);
+
+
+    if (batt_light){
+        batt_file = RED_BLINK_FILE;
+        batt_led = RED_LED_FILE;
+        batt_delay_on = RED_DELAY_ON;
+        batt_delay_off = RED_DELAY_OFF;
+    }else{
+        batt_file = BLUE_BLINK_FILE;
+        batt_led = BLUE_LED_FILE;
+        batt_delay_on = BLUE_DELAY_ON;
+        batt_delay_off = BLUE_DELAY_OFF;
+    }
 
     if (onMS > 0 && offMS > 0) {
         /*
@@ -163,26 +195,20 @@ set_speaker_light_locked(struct light_device_t* dev,
          * else
          *   use blink mode 1
          */
-        if (onMS == offMS)
-            blink = 2;
-        else
-            blink = 1;
+        blink = 1;
     } else {
         blink = 0;
     }
 
-    if (blink) {
-        if (red) {
-            if (write_int(RED_BLINK_FILE, blink))
-                write_int(RED_LED_FILE, 0);
-	}
-        if (blue) {
-            if (write_int(BLUE_BLINK_FILE, blink))
-                write_int(BLUE_LED_FILE, 0);
-	}
+    if (blink){
+        //Set new blink values
+        write_int(batt_delay_on, onMS);
+        write_int(batt_delay_off, offMS);
+        write_int(batt_file, 1);
     } else {
-        write_int(RED_LED_FILE, red);
-        write_int(BLUE_LED_FILE, blue);
+        if (is_lit(state)){
+           write_int(batt_led, 255);
+        }
     }
 
     return 0;
@@ -192,9 +218,9 @@ static void
 handle_speaker_battery_locked(struct light_device_t* dev)
 {
     if (is_lit(&g_battery)) {
-        set_speaker_light_locked(dev, &g_battery);
+        set_speaker_light_locked(dev, &g_battery, 1);
     } else {
-        set_speaker_light_locked(dev, &g_notification);
+        set_speaker_light_locked(dev, &g_notification, 0);
     }
 }
 
@@ -273,6 +299,8 @@ static int open_lights(const struct hw_module_t* module, char const* name,
     int (*set_light)(struct light_device_t* dev,
             struct light_state_t const* state);
 
+    ALOGD("openlights called");
+    
     if (0 == strcmp(LIGHT_ID_BACKLIGHT, name))
         set_light = set_light_backlight;
     else if (0 == strcmp(LIGHT_ID_BATTERY, name))
