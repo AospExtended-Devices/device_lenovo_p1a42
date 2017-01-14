@@ -44,9 +44,6 @@ static int g_attention = 0;
 char const*const RED_LED_FILE
         = "/sys/class/leds/red/brightness";
 
-char const*const GREEN_LED_FILE
-        = "/sys/class/leds/green/brightness";
-
 char const*const BLUE_LED_FILE
         = "/sys/class/leds/blue/brightness";
 
@@ -58,9 +55,6 @@ char const*const BUTTON_FILE
 
 char const*const RED_BLINK_FILE
         = "/sys/class/leds/red/blink";
-
-char const*const GREEN_BLINK_FILE
-        = "/sys/class/leds/green/blink";
 
 char const*const BLUE_BLINK_FILE
         = "/sys/class/leds/blue/blink";
@@ -182,17 +176,12 @@ set_speaker_light_locked(struct light_device_t* dev,
             if (write_int(RED_BLINK_FILE, blink))
                 write_int(RED_LED_FILE, 0);
 	}
-        if (green) {
-            if (write_int(GREEN_BLINK_FILE, blink))
-                write_int(GREEN_LED_FILE, 0);
-	}
         if (blue) {
             if (write_int(BLUE_BLINK_FILE, blink))
                 write_int(BLUE_LED_FILE, 0);
 	}
     } else {
         write_int(RED_LED_FILE, red);
-        write_int(GREEN_LED_FILE, green);
         write_int(BLUE_LED_FILE, blue);
     }
 
