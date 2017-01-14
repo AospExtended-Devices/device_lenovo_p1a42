@@ -18,3 +18,6 @@ include device/lenovo/msm8916-common/board/*.mk
 
 # Properties
 TARGET_SYSTEM_PROP += device/lenovo/msm8916-common/system.prop
+
+# CMHW
+BOARD_HARDWARE_CLASS := device/lenovo/msm8916-common/cmhw/src
