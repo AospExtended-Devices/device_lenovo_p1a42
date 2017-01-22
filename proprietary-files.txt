@@ -29,6 +29,39 @@ vendor/lib/libFlacSwDec.so
 vendor/lib64/libFlacSwDec.so
 bin/msm_irqbalance
 vendor/etc/msm_irqbalance.conf
+vendor/etc/audio_effects.conf
+etc/mixer_paths_mtp.xml
+etc/audio_policy.conf
+etc/acdbdata/MTP/MTP_Bluetooth_cal.acdb
+etc/acdbdata/MTP/MTP_General_cal.acdb
+etc/acdbdata/MTP/MTP_Global_cal.acdb
+etc/acdbdata/MTP/MTP_Handset_cal.acdb
+etc/acdbdata/MTP/MTP_Hdmi_cal.acdb
+etc/acdbdata/MTP/MTP_Headset_cal.acdb
+etc/acdbdata/MTP/MTP_Speaker_cal.acdb
+etc/acdbdata/QRD/msm8939-snd-card-skul
+etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb
+etc/acdbdata/QRD/QRD_General_cal.acdb
+etc/acdbdata/QRD/QRD_Global_cal.acdb
+etc/acdbdata/QRD/QRD_Handset_cal.acdb
+etc/acdbdata/QRD/QRD_Hdmi_cal.acdb
+etc/acdbdata/QRD/QRD_Headset_cal.acdb
+etc/acdbdata/QRD/QRD_Speaker_cal.acdb
+etc/acdbdata/QRD/msm8939-snd-card-skul/QRD_SKUL_Bluetooth_cal.acdb
+etc/acdbdata/QRD/msm8939-snd-card-skul/QRD_SKUL_General_cal.acdb
+etc/acdbdata/QRD/msm8939-snd-card-skul/QRD_SKUL_Global_cal.acdb
+etc/acdbdata/QRD/msm8939-snd-card-skul/QRD_SKUL_Handset_cal.acdb
+etc/acdbdata/QRD/msm8939-snd-card-skul/QRD_SKUL_Hdmi_cal.acdb
+etc/acdbdata/QRD/msm8939-snd-card-skul/QRD_SKUL_Headset_cal.acdb
+etc/acdbdata/QRD/msm8939-snd-card-skul/QRD_SKUL_Speaker_cal.acdb
+etc/tfa98xx/P1_SPK_0801.speaker
+etc/tfa98xx/TFA9890_N1B12_N1C3_v3.config
+etc/tfa98xx/music.eq
+etc/tfa98xx/speech.eq
+etc/tfa98xx/TFA9890_N1C3_2_1_1.patch
+etc/tfa98xx/music.preset
+etc/tfa98xx/speech.preset
+etc/tfa98xx/coldboot.patch
 
 # Bluetooth
 bin/btnvtool
@@ -183,6 +216,12 @@ vendor/lib64/libcalmodule_akm.so
 vendor/lib/libcalmodule_gyroscope.so
 vendor/lib/libscale.so
 vendor/lib/libactuator_dw9761b.so
+etc/flp.conf
+etc/gps.conf
+etc/izat.conf
+etc/lowi.conf
+etc/sap.conf
+etc/xtwifi.conf
 
 # Graphics
 vendor/lib64/egl/libEGL_adreno.so
@@ -264,9 +303,11 @@ vendor/lib/libmmosal.so
 vendor/lib/libmm-color-convertor.so
 
 # NFC
-vendor/lib64/hw/keystore.msm8916.so
 vendor/firmware/BCM20795A2_001.003.025.0005.0050_Generic_I2C_NCD_Unsigned_configdata.ncd
 vendor/firmware/BCM20795A2_001.003.025.0005.0051_Customers_China_NCD_Unsigned_configdata.ncd
+etc/libnfc-brcm.conf
+etc/libnfc-brcm-20795a20.conf
+etc/nfcee_access.xml
 
 # Perf
 vendor/lib64/libqti-perfd-client.so
@@ -314,7 +355,6 @@ vendor/lib64/libwqe.so
 vendor/lib64/libquipc_os_api.so
 vendor/lib64/libulp2.so
 vendor/lib64/libxtadapter.so
-vendor/lib64/hw/keystore.msm8916.so
 vendor/bin/sampleauthdaemon
 vendor/lib/libdisp-aba.so
 vendor/lib/libulp2.so
@@ -377,6 +417,9 @@ vendor/lib64/libxml.so
 vendor/lib/liblowi_client.so
 vendor/lib/libqmi_client_qmux.so
 vendor/lib64/libqmi_client_qmux.so
+etc/data/netmgr_config.xml
+etc/data/qmi_config.xml
+etc/data/dsi_config.xml
 
 # Sensorhub
 lib64/hw/sensors.msm8916.so
@@ -408,3 +451,9 @@ etc/firmware/ice40.bin
 # WiFi
 vendor/lib64/libxtwifi_ulp_adaptor.so
 vendor/lib/libxtwifi_ulp_adaptor.so
+etc/hostapd/hostapd.accept
+etc/hostapd/hostapd_default.conf
+etc/hostapd/hostapd.deny
+etc/wifi/p2p_supplicant_overlay.conf
+etc/wifi/wpa_supplicant_overlay.conf
+etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
