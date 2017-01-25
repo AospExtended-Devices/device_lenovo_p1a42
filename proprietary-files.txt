@@ -151,7 +151,7 @@ vendor/lib64/libmm-disp-apis.so
 vendor/lib/libmm-disp-apis.so
 vendor/lib64/libmm-qdcm.so
 vendor/lib/libmm-qdcm.so
--app/colorservice/colorservice.apk
+-app/colorservice/colorservice.apk|ac958a2aca811a9038e34013ff9e2ff5edc5dbbb
 
 # DRM
 bin/qseecomd
@@ -163,8 +163,8 @@ vendor/lib64/librpmb.so
 vendor/lib64/libssd.so
 vendor/lib/libwvdrm_L3.so
 vendor/lib/libWVStreamControlAPI_L3.so
--framework/com.google.widevine.software.drm.jar
--framework/com.google.android.media.effects.jar
+-framework/com.google.widevine.software.drm.jar|c1405ec9ddd96a57d42a04815d8255f9728f41d8
+-framework/com.google.android.media.effects.jar|b07de32bc53507d87d5cf0e946ff2738d79186c0
 
 # Fastcharger
 bin/vfmAPITest
@@ -208,8 +208,8 @@ vendor/lib/liblocationservice_glue.so
 etc/permissions/com.qualcomm.location.xml
 vendor/lib64/liblocationservice_glue.so
 etc/permissions/com.qti.location.sdk.xml
--priv-app/com.qualcomm.location/com.qualcomm.location.apk
--framework/com.qti.location.sdk.jar
+-priv-app/com.qualcomm.location/com.qualcomm.location.apk|97801b40c8095cf631c0c4fc302f728548545b5b
+-framework/com.qti.location.sdk.jar|0fb1746edefdd0bb310529787f577da0c05cd69d
 vendor/lib64/liblocationservice.so
 vendor/lib64/libcalmodule_gyroscope.so
 vendor/lib64/libcalmodule_akm.so
@@ -275,7 +275,7 @@ vendor/lib/libOpenCL.so
 vendor/lib64/libscale.so
 vendor/lib64/libsc-a3xx.so
 vendor/lib/libsc-a3xx.so
--framework/com.qti.snapdragon.sdk.display.jar
+-framework/com.qti.snapdragon.sdk.display.jar|df8ca9d5e9cdbf66b87d8f881240adecf5edabed
 vendor/lib64/libsd_sdk_display.so
 
 # Graphics firmware
@@ -374,13 +374,13 @@ lib/libloc_eng.so
 lib/libloc_api_v02.so
 lib/libloc_core.so
 lib/libvalAuth.so
--app/shutdownlistener/shutdownlistener.apk
+-app/shutdownlistener/shutdownlistener.apk|2bef6ef1ab8c4acdaf84c35d1d250ea2cb02c31a
 vendor/lib64/libdisp-aba.so
 vendor/lib64/hw/gatekeeper.msm8916.so
 etc/cdrom_install.iso
 
 # Radio
--priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|5978531de78ed0f64f559e9b44b791ff08620c5a
 bin/netmgrd
 bin/qmuxd
 bin/radish
@@ -389,8 +389,8 @@ bin/rild
 bin/rmt_storage
 etc/permissions/qcrilhook.xml
 etc/permissions/qcnvitems.xml
--framework/qcnvitems.jar
--framework/qcrilhook.jar
+-framework/qcnvitems.jar|07661b43bc3ef8d7b42ef9ab03e358ed7759c392
+-framework/qcrilhook.jar|fdaaf747df3353d1c96546280edfa10f3efeb59d
 lib64/libril.so
 lib/libril.so
 lib64/libnetd_client.so
@@ -431,7 +431,7 @@ vendor/lib/libthermalclient.so
 vendor/lib64/libthermalioctl.so
 
 # Time services
--app/TimeService/TimeService.apk
+-app/TimeService/TimeService.apk|feddeae4dc4f38a95a1595a76e8701aa6200698e
 bin/time_daemon
 -vendor/lib64/libtime_genoff.so
 -vendor/lib/libtime_genoff.so
