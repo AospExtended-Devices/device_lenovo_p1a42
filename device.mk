@@ -179,6 +179,10 @@ PRODUCT_PACKAGES += \
     librmnetctl \
     libxml2
 
+# Sensor
+PRODUCT_COPY_FILES += \
+  $(LOCAL_PATH)/configs/calmodule.cfg:system/vendor/etc/calmodule.cfg
+
 # Wifi
 PRODUCT_PACKAGES += \
     libqsap_sdk \

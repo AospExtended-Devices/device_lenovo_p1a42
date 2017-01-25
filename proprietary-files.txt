@@ -211,9 +211,6 @@ etc/permissions/com.qti.location.sdk.xml
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk|97801b40c8095cf631c0c4fc302f728548545b5b
 -framework/com.qti.location.sdk.jar|0fb1746edefdd0bb310529787f577da0c05cd69d
 vendor/lib64/liblocationservice.so
-vendor/lib64/libcalmodule_gyroscope.so
-vendor/lib64/libcalmodule_akm.so
-vendor/lib/libcalmodule_gyroscope.so
 vendor/lib/libscale.so
 vendor/lib/libactuator_dw9761b.so
 etc/flp.conf
@@ -422,6 +419,9 @@ etc/data/qmi_config.xml
 etc/data/dsi_config.xml
 
 # Sensorhub
+vendor/lib64/libcalmodule_gyroscope.so
+vendor/lib/libcalmodule_gyroscope.so
+vendor/lib64/libcalmodule_akm.so
 lib64/hw/sensors.msm8916.so
 
 # Thermal
