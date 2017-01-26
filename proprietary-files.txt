@@ -387,8 +387,8 @@ etc/permissions/qcrilhook.xml
 etc/permissions/qcnvitems.xml
 -framework/qcnvitems.jar|07661b43bc3ef8d7b42ef9ab03e358ed7759c392
 -framework/qcrilhook.jar|fdaaf747df3353d1c96546280edfa10f3efeb59d
--lib64/libril.so
--lib/libril.so
+lib64/libril.so
+lib/libril.so
 lib64/libnetd_client.so
 lib/libnetd_client.so
 vendor/bin/RIDLClient.exe
