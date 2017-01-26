@@ -172,6 +172,7 @@ lib/libvfmClient.so
 lib64/libvfmClient.so
 bin/vfmService
 bin/vfmExTest
+lib64/libvfmtztransport.so
 lib/libvfmtztransport.so
 bin/fast_charger_sw
 
@@ -181,7 +182,6 @@ lib/hw/fingerprint.ranchu.so
 lib64/hw/fingerprint.goldfish.so
 lib64/hw/fingerprint.default.so
 lib64/hw/fingerprint.ranchu.so
-lib64/libvfmtztransport.so
 lib64/libvcsfp.so
 lib/libvcsfp.so
 
