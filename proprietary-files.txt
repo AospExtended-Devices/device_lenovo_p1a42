@@ -176,7 +176,6 @@ lib/libvfmtztransport.so
 bin/fast_charger_sw
 
 # Fingerprint
-bin/fingerprintd
 lib/hw/fingerprint.goldfish.so
 lib/hw/fingerprint.ranchu.so
 lib64/hw/fingerprint.goldfish.so

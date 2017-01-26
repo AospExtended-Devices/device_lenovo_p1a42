@@ -87,6 +87,10 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     memtrack.msm8916
 
+# Fingerprint sensor
+PRODUCT_PACKAGES += \
+    fingerprintd
+
 # FM
 PRODUCT_PACKAGES += \
     FMRadio \
