@@ -1,0 +1,1 @@
+allow init fingerprintd_data_file:chr_file { lock };
