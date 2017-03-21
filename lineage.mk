@@ -21,6 +21,11 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 # Release name
 PRODUCT_RELEASE_NAME := p1a42
 
+# Override build properties.
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    BUILD_FINGERPRINT="Lenovo/passion_row/P1a42:6.0.1/MMB29M/P1a42_S288_160721_ROW:user/release-keys" \
+    PRIVATE_BUILD_DESC="passion_row-user 6.0.1 MMB29M P1a42_S288_160721_ROW release-keys"
+
 # Boot animation
 TARGET_SCREEN_WIDTH := 1080
 TARGET_SCREEN_HEIGHT := 1920
