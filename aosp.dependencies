@@ -1,0 +1,20 @@
+[
+  {
+    "remote":      "github",
+    "repository":  "FireLord1/android_vendor_lenovo_p1a42",
+    "target_path": "vendor/lenovo/p1a42",
+    "branch":      "cm-14.1"
+  },
+  { 
+    "remote":      "github",
+    "repository":  "FireLord1/android_kernel_lenovo_p1a42",
+    "target_path": "kernel/lenovo/p1a42",
+    "branch":      "cm-14.1"
+  },
+  { 
+    "remote":      "github",
+    "repository":  "LineageOS/android_packages_resources_devicesettings",
+    "target_path": "packages/resources/devicesettings",
+    "branch":      "cm-14.1"
+  }
+]
