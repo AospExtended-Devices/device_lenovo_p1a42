@@ -73,7 +73,6 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    camera.msm8916 \
     Snap
 
 # Display
@@ -96,10 +95,6 @@ PRODUCT_PACKAGES += \
 # Gello
 PRODUCT_PACKAGES += \
     Gello
-
-# GPS
-PRODUCT_PACKAGES += \
-    gps.msm8916
 
 # Init scripts
 PRODUCT_COPY_FILES += \
