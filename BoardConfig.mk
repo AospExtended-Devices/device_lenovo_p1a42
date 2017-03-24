@@ -143,7 +143,6 @@ BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_SUPPRESS_EMMC_WIPE := true
 
 # SELinux
-BOARD_SEPOLICY_DIRS += device/lenovo/p1a42/sepolicy
 include device/qcom/sepolicy/sepolicy.mk
 
 # WiFi
