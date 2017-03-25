@@ -32,7 +32,6 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     public void onReceive(final Context context, Intent intent) {
         if (DEBUG) Log.d(TAG, "Starting service");
         context.startService(new Intent(context, SensorsDozeService.class));
-        context.startService(new Intent(context, GloveModeService.class));
     }
 
     private void enableComponent(Context context, String component) {
