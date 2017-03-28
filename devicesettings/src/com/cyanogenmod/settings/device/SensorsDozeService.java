@@ -35,8 +35,6 @@ import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.util.Log;
 
-import cyanogenmod.providers.CMSettings;
-
 public class SensorsDozeService extends Service {
 
     public static final boolean DEBUG = false;
@@ -327,7 +325,6 @@ public class SensorsDozeService extends Service {
             if (DEBUG) Log.d(TAG, "Doze launch. Time since last : " + delta);
 
             launchWakeLock();
-            launchAcknowledge();
             mLastPulseTimestamp = SystemClock.elapsedRealtime();
             mContext.sendBroadcastAsUser(new Intent(DOZE_INTENT),
                     UserHandle.ALL);
@@ -339,34 +336,11 @@ public class SensorsDozeService extends Service {
         if (DEBUG) Log.d(TAG, "Waking device.");
 
         mSensorsWakeLock.acquire(SENSORS_WAKELOCK_DURATION);
-        launchAcknowledge();
         mPowerManager.wakeUp(SystemClock.uptimeMillis());
     }
 
     private void launchWakeLock() {
         mSensorsWakeLock.acquire(SENSORS_WAKELOCK_DURATION);
-    }
-
-    private void launchAcknowledge() {
-        AudioManager audioManager = (AudioManager) mContext.getSystemService(
-                Context.AUDIO_SERVICE);
-        Vibrator vibrator = (Vibrator) mContext.getSystemService(
-                Context.VIBRATOR_SERVICE);
-
-        boolean enabled = CMSettings.System.getInt(mContext.getContentResolver(),
-                CMSettings.System.TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK, 1) != 0;
-
-        switch (audioManager.getRingerMode()) {
-            case AudioManager.RINGER_MODE_SILENT:
-                break;
-            case AudioManager.RINGER_MODE_VIBRATE:
-            case AudioManager.RINGER_MODE_NORMAL:
-            default:
-                if (enabled) {
-                    vibrator.vibrate(VIBRATOR_ACKNOWLEDGE);
-                }
-                break;
-        }
     }
 
     private void resetValues() {
