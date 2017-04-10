@@ -1,0 +1,7 @@
+# Binaries
+
+# Camera
+/data/cam_socket[12]                                        u:object_r:camera_socket:s0
+
+# Partitions
+
