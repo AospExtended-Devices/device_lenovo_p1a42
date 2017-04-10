@@ -4,6 +4,7 @@
 # Binaries
 /system/bin/power_engine				u:object_r:power_engine_exec:s0
 /system/bin/fast_charger_sw 				u:object_r:fast_charger_sw_exec:s0
+/system/bin/vfmService					u:object_r:vfmService_exec:s0
 
 # Camera
 /data/cam_socket[12]                                    u:object_r:camera_socket:s0

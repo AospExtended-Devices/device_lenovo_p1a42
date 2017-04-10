@@ -3,3 +3,6 @@ r_dir_file(fingerprintd, firmware_file)
 allow fingerprintd storage_file:dir search;
 allow fingerprintd uhid_device:chr_file rw_file_perms;
 allow fingerprintd system_data_file:file { open };
+allow fingerprintd init:process { signull };
+allow fingerprintd device:fifo_file { lock };
+allow fingerprintd fingerprintd_data_file:file { lock };
