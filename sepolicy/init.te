@@ -1,9 +1,8 @@
 # Unsure what init is doing here
 allow init app_data_file:dir setattr;
-allow init cid_block_device:blk_file setattr;
-allow init clogo_block_device:blk_file setattr;
-allow init hob_block_device:blk_file setattr;
 allow init logs_block_device:blk_file setattr;
+allow init sdcardd_exec:file getattr;
+allow init fingerprintd_data_file:chr_file { lock };
 
 allow init firmware_file:dir mounton;
 allow init fsg_file:dir mounton;
