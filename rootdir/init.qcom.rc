@@ -245,10 +245,11 @@ service fast_charger_sw /system/bin/fast_charger_sw
 
 #lenovo-sw, chenzz3, added fingerprint daemon service, begin
 #synaptics fingerprint service
-service vfmservice /system/bin/vfmService
+service vfmService /system/bin/vfmService
     user system
     group system
     class main
+    seclabel u:r:vfmService:s0
     disabled
 
 #fingerpirntd
