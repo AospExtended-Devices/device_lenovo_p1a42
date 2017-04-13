@@ -6,7 +6,7 @@
 /system/bin/vfmService					u:object_r:vfmService_exec:s0
 
 # OneKey & IDK why fastcharger needs
-/sys/devices/soc.0/gpio_keys.69/onekeypowerdown(/.*)?	u:object_r:sysfs_fast_charger_sw:s0
+/sys/devices/soc.0/gpio_keys.69(/.*)?			u:object_r:sysfs_fast_charger_sw:s0
 
 # Camera
 /data/cam_socket[12]                                    u:object_r:camera_socket:s0
