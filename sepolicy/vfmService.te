@@ -13,3 +13,4 @@ allow vfmService firmware_file:file { read open getattr };
 allow vfmService ion_device:chr_file { read open ioctl };
 allow vfmService device:chr_file { read write ioctl };
 allow vfmService fingerprintd:process { signull };
+r_dir_file(vfmService, firmware_file)
