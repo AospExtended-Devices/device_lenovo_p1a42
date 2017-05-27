@@ -7,7 +7,6 @@ vendor/lib/libadsprpc.so
 lib64/hw/audio.primary.msm8916.so
 lib/hw/audio.primary.msm8916.so
 vendor/lib/hw/sound_trigger.primary.msm8916.so
-vendor/lib/hw/sound_trigger.primary.msm8916.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
@@ -39,7 +38,6 @@ etc/acdbdata/MTP/MTP_Handset_cal.acdb
 etc/acdbdata/MTP/MTP_Hdmi_cal.acdb
 etc/acdbdata/MTP/MTP_Headset_cal.acdb
 etc/acdbdata/MTP/MTP_Speaker_cal.acdb
-etc/acdbdata/QRD/msm8939-snd-card-skul
 etc/acdbdata/QRD/QRD_Bluetooth_cal.acdb
 etc/acdbdata/QRD/QRD_General_cal.acdb
 etc/acdbdata/QRD/QRD_Global_cal.acdb
@@ -310,6 +308,11 @@ vendor/lib64/libqti-perfd-client.so
 vendor/lib/libqti-perfd-client.so
 vendor/bin/perfd
 
+# Peripheral manager
+bin/pm-service
+vendor/lib/libperipheral_client.so
+vendor/lib64/libperipheral_client.so
+
 # Qualcomm framework
 bin/irsc_util
 vendor/lib64/libdiag.so
@@ -342,6 +345,7 @@ vendor/lib/libqmiservices.so
 vendor/lib64/libqmiservices.so
 vendor/lib64/libsmemlog.so
 vendor/lib/libsmemlog.so
+vendor/lib/liblowi_client.so
 vendor/lib64/liblowi_client.so
 vendor/lib64/libmm-als.so
 vendor/lib64/libmm-abl.so
@@ -362,7 +366,6 @@ lib64/libvalAuth.so
 bin/tftp_server
 bin/lowi-server
 bin/garden_app
-bin/pm-service
 bin/vm_bms
 bin/loc_launcher
 lib/libunwind.so
@@ -374,6 +377,8 @@ lib/libvalAuth.so
 vendor/lib64/libdisp-aba.so
 vendor/lib64/hw/gatekeeper.msm8916.so
 etc/cdrom_install.iso
+vendor/lib/libqmi_client_qmux.so
+vendor/lib64/libqmi_client_qmux.so
 
 # Radio
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|5978531de78ed0f64f559e9b44b791ff08620c5a
@@ -402,16 +407,11 @@ vendor/lib64/liblqe.so
 vendor/lib64/libmdmdetect.so
 vendor/lib/libmdmdetect.so
 vendor/lib64/libnetmgr.so
-vendor/lib64/libperipheral_client.so
-vendor/lib/libperipheral_client.so
 vendor/lib64/libril-qc-qmi-1.so
 vendor/lib64/libril-qc-radioconfig.so
 vendor/lib64/libril-qcril-hook-oem.so
 vendor/lib64/libsystem_health_mon.so
 vendor/lib64/libxml.so
-vendor/lib/liblowi_client.so
-vendor/lib/libqmi_client_qmux.so
-vendor/lib64/libqmi_client_qmux.so
 etc/data/netmgr_config.xml
 etc/data/qmi_config.xml
 etc/data/dsi_config.xml
