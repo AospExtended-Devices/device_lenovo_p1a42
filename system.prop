@@ -52,7 +52,7 @@ drm.service.enabled=1
 vidc.enc.narrow.searchrange=1
 
 # Factory reset protection
-ro.frp.pst=/dev/block/bootdevice/by-name/config
+#ro.frp.pst=/dev/block/bootdevice/by-name/config
 
 # Gps
 persist.gps.qc_nlp_in_use=1
