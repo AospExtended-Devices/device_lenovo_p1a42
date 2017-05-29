@@ -708,3 +708,15 @@ service bugreport /system/bin/dumpstate -d -p -B \
     class main
     disabled
     oneshot
+
+on charger
+    trigger fs
+    trigger post-fs
+    trigger post-fs-data
+    chown root system /sys/class/power_supply/bms/current_now
+    chown root system /sys/class/power_supply/bms/voltage_ocv
+    chmod 0664 /sys/class/power_supply/bms/current_now
+    chmod 0664 /sys/class/power_supply/bms/voltage_ocv
+    start vm_bms
+    start fast_charger_sw
+    load_all_props
