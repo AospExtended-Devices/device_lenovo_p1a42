@@ -578,6 +578,12 @@ service audiod /system/bin/audiod
    user system
    group system
 
+service vm_bms /system/bin/vm_bms
+    user root
+    group root
+    group root wakelock
+    disabled
+
 service wcnss-service /system/bin/wcnss_service
     class main
     user system
