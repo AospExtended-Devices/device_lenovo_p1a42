@@ -135,7 +135,7 @@ endif
 BOARD_USES_QCOM_HARDWARE := true
 
 # Recovery
-TARGET_RECOVERY_FSTAB := device/lenovo/p1a42/rootdir/fstab.qcom
+TARGET_RECOVERY_FSTAB := device/lenovo/p1a42/rootdir/etc/fstab.qcom
 BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 BOARD_HAS_NO_MISC_PARTITION := true
