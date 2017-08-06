@@ -1,5 +1,5 @@
 #!/system/bin/sh
-# Copyright (c) 2009-2015, The Linux Foundation. All rights reserved.
+# Copyright (c) 2013-2014, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -26,24 +26,59 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-target=`getprop ro.board.platform`
+#
+# start ril-daemon only for targets on which radio is present
+#
+baseband=`getprop ro.baseband`
+datamode=`getprop persist.data.mode`
+netmgr=`getprop ro.use_data_netmgrd`
 
-start_vm_bms()
+case "$baseband" in
+    "msm" | "unknown")
+    start qmuxd
+
+    multisim=`getprop persist.radio.multisim.config`
+
+    if [ "$multisim" = "dsds" ] || [ "$multisim" = "dsda" ]; then
+        start ril-daemon2
+    fi
+
+    case "$datamode" in
+        "tethered")
+            start qti
+            start port-bridge
+            ;;
+        "concurrent")
+            start qti
+            if [ "$netmgr" = "true" ]; then
+                start netmgrd
+            fi
+            ;;
+        *)
+            if [ "$netmgr" = "true" ]; then
+                start netmgrd
+            fi
+            ;;
+    esac
+esac
+
+start_copying_prebuilt_qcril_db()
 {
-	if [ -e /dev/vm_bms ]; then
-		chown -h root.system /sys/class/power_supply/bms/current_now
-		chown -h root.system /sys/class/power_supply/bms/voltage_ocv
-		chmod 0664 /sys/class/power_supply/bms/current_now
-		chmod 0664 /sys/class/power_supply/bms/voltage_ocv
-		start vm_bms
-	fi
+    if [ -f /system/vendor/qcril.db -a ! -f /data/misc/radio/qcril.db ]; then
+        cp /system/vendor/qcril.db /data/misc/radio/qcril.db
+        chown -h radio.radio /data/misc/radio/qcril.db
+    fi
 }
 
-case "$target" in
-    "msm8916")
-        start_vm_bms
-        ;;
-    "msm8909")
-        start_vm_bms
-        ;;
-esac
+#
+# Copy qcril.db if needed for RIL
+#
+start_copying_prebuilt_qcril_db
+echo 1 > /data/misc/radio/db_check_done
+
+rm -rf /data/misc/radio/modem_config
+mkdir /data/misc/radio/modem_config
+cp -r /firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/mbn_ota/* /data/misc/radio/modem_config
+chown -hR radio.radio /data/misc/radio/modem_config
+chmod -R 770 /data/misc/radio/modem_config
+echo 1 > /data/misc/radio/copy_complete

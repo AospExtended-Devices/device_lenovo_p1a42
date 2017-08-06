@@ -101,19 +101,15 @@ PRODUCT_PACKAGES += \
     Gello
 
 # Init scripts
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rootdir/init.class_main.sh:root/init.class_main.sh \
-    $(LOCAL_PATH)/rootdir/init.qcom.bms.sh:root/init.qcom.bms.sh \
-    $(LOCAL_PATH)/rootdir/init.qcom.bt.sh:system/etc/init.qcom.bt.sh \
-    $(LOCAL_PATH)/rootdir/init.qcom.early_boot.sh:root/init.qcom.early_boot.sh \
-    $(LOCAL_PATH)/rootdir/init.qcom.factory.rc:root/init.qcom.factory.rc \
-    $(LOCAL_PATH)/rootdir/init.qcom.rc:root/init.qcom.rc \
-    $(LOCAL_PATH)/rootdir/init.qcom.sh:root/init.qcom.sh \
-    $(LOCAL_PATH)/rootdir/init.qcom.usb.rc:root/:root/init.qcom.usb.rc \
-    $(LOCAL_PATH)/rootdir/init.qcom.usb.sh:root/init.qcom.usb.sh \
-    $(LOCAL_PATH)/rootdir/ueventd.qcom.rc:root/ueventd.qcom.rc \
-    $(LOCAL_PATH)/rootdir/init.target.rc:root/init.target.rc \
-    $(LOCAL_PATH)/rootdir/fstab.qcom:root/fstab.qcom \
+PRODUCT_PACKAGES += \
+    init.qcom.bt.sh \
+    init.class_main.sh
+
+PRODUCT_PACKAGES += \
+    fstab.qcom \
+    init.qcom.usb.rc \
+    init.qcom.rc \
+    ueventd.qcom.rc
 
 # Keylayout
 PRODUCT_COPY_FILES += \
@@ -188,7 +184,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     hostapd \
-    dhcpcd.conf \
     wpa_supplicant \
     wpa_supplicant.conf
 

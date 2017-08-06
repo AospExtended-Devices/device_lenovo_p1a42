@@ -19,7 +19,7 @@
 
 ## Device Picture 
 
-![Lenovo Vibe P1 Turbo] (https://i.ytimg.com/vi/hQ_tGlpsmXk/maxresdefault.jpg "Lenovo Vibe P1 Turbo")
+![Lenovo Vibe P1 Turbo](https://i.ytimg.com/vi/hQ_tGlpsmXk/maxresdefault.jpg "Lenovo Vibe P1 Turbo")
 
 ## Copyright
 
