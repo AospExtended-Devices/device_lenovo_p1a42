@@ -19,8 +19,7 @@ $(call inherit-product, device/lenovo/p1a42/full_p1a42.mk)
 $(call inherit-product, vendor/aosp/common.mk)
 
 # Boot animation
-TARGET_SCREEN_WIDTH := 1080
-TARGET_SCREEN_HEIGHT := 1920
+TARGET_BOOT_ANIMATION_RES := 1080
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := p1a42
